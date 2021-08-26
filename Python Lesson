@@ -1,0 +1,563 @@
+#Lesson 1 
+#Type Hello World
+print("Hello World") #string using double qautation
+#convert to simple letters
+x="Hello World"
+print(x.lower())
+#convert to capital letters
+print(x.upper())
+
+#Lesson 2 
+#2.1 Data Types
+x=123 #integer
+print(type(x))
+print(x) 
+
+p=1.23 #float
+q='Heshan Deeyagaha' #string using single qautation
+r=True #Boolian
+s=False #Boolian
+t=10+5j+10 #complex numbers
+print(x, type(x), p, type(p), q, type(q), r, type(r), s, type(s), t, type(t)) 
+
+
+#2.2 Escape Characters
+print('Heshan\nKavindu\nDeeyagaha') #use \n for New Line
+print('Name\t:Heshan') #use \t for tab
+print('Hi \"Heshan\"') #print double quatation
+print('Hi \'Heshan\'') #print single quatation
+print("\\ is a escape character") #print backslash
+
+#Lesson 3
+a=10
+b=2
+print(a+b)
+print(a-b)
+print(a*b)
+print(a/b)
+print((a+1)%b) #modules
+print(a//b) #10/3 = 3 remainder 1 > 10//3=3, gives the integer
+print(a**b) #power
+
+#special operators
+#x = x+5 >> x+=5 #to x add 5
+x=10
+print(x)
+x+=5
+print(x)
+#same can be done for x+=5, x-+5, x*=5, x/=5, x%=5, x//=5, x**=5
+x//=5
+print(x)
+
+#assignment
+a,b,c = 10,2.8,"Hi" #matrix type assignment
+print(a,b,c)
+
+#strings (+,* only)
+fname = "Heshan"
+lname = "Deeyagaha"
+print(fname + lname) #concatinate - can only add strings
+print(fname*a) #string multiplication
+teststring="string"
+print(teststring[:4])
+
+#concatinate numbers and strings
+print(fname+" "+lname+" "+"2") #type the integer as a string
+print(fname+" "+lname+" "+str(2)) #convert the integer to a string
+
+#boolian
+age=20
+agelmt= 18
+Is18=age==agelmt #check whether the age is equal to age limit
+print(Is18)
+Allow=age>agelmt #check whether the age is allowed, above the age limit;     comparison operators out boolians
+print(Allow)
+age=age-2 #change the age, now equal to age limit
+Is18=age==agelmt #check whether the age is equal to age limit
+print(Is18)
+Allow=age>agelmt #check whether the age is allowed, above the age limit; 
+print(Allow)
+
+#~boolian algebra
+a=True; b=False
+print(a and b) #AND
+print(a or b) #OR
+print(not a) #NOT
+print(a ^ b) #XOR, if given two varibales are equal, FALSE; if given two variables are not equal, TRUE
+
+#Lesson4 Type Conversion
+a="10" #in here 10 is string
+b=5
+c=int(a)+b #to do arithmatic operations type should be integer/float
+print(c)
+
+a=False
+c=bool(a)+b #bool(True)=1, bool(False)=0
+print(c)
+
+#UserInput
+#a=input("Enter anything : ") #whatever user types here, input always take it as a string
+#print("You type "+a)
+#print(type(a))
+
+#When we print something, once it print it always goes to the next line automatically.
+#To stop that we can use end function inside print.
+#print("Enter your Name : ", end=' ')
+#Name = input()
+#print("Hi, ",Name)
+
+#Section 5 Data Structures - a way how computer stores data in computer
+#######################################################################
+
+# 1. List (for same type of data types)  List=[index0, index1, index2, index3, .., indexn]
+l=[12, 27, 33, 47]
+print(l)
+#obtain values
+x=l[3] #getting the third index value, python is 0 index programming language, starting from 0
+print(x)
+# update items in list
+l[0]=6
+print(l)
+# add items to list
+l.append(60) #add 60 at the end of the list
+print(l)
+l.insert(2, 30) #add 30 to the second index, the previous second index will be the third index
+print(l)
+# remove items using element
+l.remove(33) #when removing we remove the element, not the index
+print(l)
+# remove items using index
+l.pop(0)
+print(l)
+#lists can add
+m=[77,90]
+n=l+m
+print(n)
+#check whether number 60 is in the new list "n", if yes it will out "True" else "False"
+print(60 in n)
+print(66 not in n)
+
+# 2. Dictionaries - Key Value Pair, Also keys cannot duplicate, because values identify using keys.
+#initialize dictionary
+cmb = {"cmb1":"Fort","cmb2":"Maradana","cmb3":"Bambalapitiya","cmb4":"Kollupitiya","cmb5":"Kirulapona"}
+print(cmb)
+#insert into dictionary
+cmb["cmb6"]="Wellawaththa"
+print(cmb)
+print(cmb.keys())
+print(cmb.values())
+#obtain values
+c=cmb["cmb5"]
+print(c)
+#Adding interger key to dictionary
+cmb[10200]="Homagama"
+print(cmb)
+#dictionary key can be a simple key, but value can be complex, even value can be another dictionary
+cmb["Homagmacities"]={"1":"Katuwana", "2":"Uduwana", "3":"Munasinghegama"}
+print(cmb)
+#get items from disctionary
+y=cmb["cmb2"]
+print(y)
+#when the searched item is not in the we need to throw and message instead of throwing an error, for that,
+y=cmb.get("cmb10", "no such key")
+print(y)
+#delete dictionary entries by deleting the key
+del cmb["cmb2"]
+print(cmb)
+#delete the entire dictionary
+cmb.clear()
+print(cmb)
+#in dictionary when we assign key to variable and change that variable, 
+#it will change the dictionary values, if the value is a list or another dictionary
+anml={
+    "a":["cat","dog","fish"],
+    "b":["fish","chicken","pork","beef"],
+    "c":16
+}
+y=anml["a"]
+y.append("cow")
+print(y)
+print(anml) #value cow has added to the list "a", even we didnt append that value to the parent dictionary
+#basic data types like integers,floats,strings will not behave as above.
+y=anml["c"]
+y=17 
+print(y), print(anml) #in here even y changed, anml dictionary hasn't changed
+#check whether key b is in the dictionary "anml", if yes it will out "True" else "False"
+print(anml)
+print("b" in anml)
+print("b" not in anml)
+
+#if we convert dictionary to list only keys will be out
+
+# 3. Sets
+set1={"Hello","Rushen","Hello"} #when printing Rihan came to front, and duplicates will not print
+print(set1)
+set1.add("Hello") #even we add duplicate, it doesnt show. #sets use hash functions to identify duplicates
+print(set1)
+set1.remove("Hello")
+print(set1)
+set2={"Heshan"}
+#Add two sets
+setSum=set1.union(set2)
+print(setSum)
+#add two sets using | command
+setSum2=setSum|set1|set2
+print(setSum2)
+#sets can be deduct, but when deduct it deducts the 1st set from 2nd set and show what is left in x after deduct.
+x={"1","2","3"} 
+y={"2","4"}
+z=x-y #practicle scenario:remove postal codes which are quarentined from all postal codes.
+print(z) #this prints 1,3 because 2 in x is deducted by 2 in y, and since x doesnt have 4, opertaion stops.
+#check whether number 2 is in the set "x", if yes it will out "True" else "False"
+print("2" in x)
+print("3" not in y)
+
+#cannot access elements using index method
+
+# 4. Tuples
+#data strycture with sum of all data types
+#to sum data from all data types, practicle : database
+Heshan=("Heshan","165","SriLanka","Heshan")
+print(type(Heshan))
+print(Heshan)
+name=Heshan[0]
+height=Heshan[1]
+country=Heshan[2]
+print(country,name,height)
+#assign set of values to variable at once
+Name, Height, Country, NickName = Heshan
+print(Height, NickName, Country)
+#cannot remove elements from tuple, if need convert to list and do the opertaion
+#Num of times "Heshan" in tuple
+print(Heshan.count("Heshan"))
+
+# 5. Slicing
+x=["A","B","C","D"]
+y=x[0:2] #take from index 0 up to 2, not 2
+print(y)
+y=x[2:] #take all from index 2
+print(y)
+#take the last element
+y=x[-1] #-1 means calculate from right to left
+#from left to right > [0][1][2][3][4]       number of char = R,  nth char = r
+#from right to left > [-5][-4][-3][-2][-1]  number of char = R,  nth char = (r-R)
+print(y)
+#or
+y=x[len(x)-1]
+print(y)
+#take all except last element
+y=x[:-1]
+print(y)
+y=x[-1:]
+print(y)
+#reverse a list
+x=["A","B","C","D"]
+print("original list : ", x)
+x.reverse()
+print("updated list after reverse : ", x)
+
+#slicing can be use for strings, lists, and tuples
+
+# Lesson X - Conditional Statement
+x = input("Even/Odd number check!, Insert Number : ") #input is always a string
+y = int(x)
+z = y%2
+if z==0:
+    print (z,"is an even number")
+else: 
+    print (z,"is an odd number")
+
+LESSON2================================
+
+#Conditions_Python_Lesson
+
+# 1. CCNA pass mark is 780 from 1000
+'''
+strmarks=input("Enter your CCNA marks : ")
+intmarks=int(strmarks)
+if intmarks>780:
+    print("Congratulations! You have passed the CCNA exam")
+else:
+    print("We are sorry to say that you have failed your CCNA exam")
+'''
+
+# 2. School grading
+'''
+subject = input("Enter the subject : ")
+strmarks = input("Insert your marks : ")
+intmarks = int(strmarks)
+grade = ""
+'''
+#mooda method
+'''
+if intmarks<35:
+    grade = "F"
+else:
+    if intmarks>=35 and intmarks<50:
+        grade = "S"
+    else:
+        if intmarks>=50 and intmarks<65:
+            grade = "C"
+        else:
+            if intmarks>=65 and intmarks<75:
+                grade = "B"
+            else:
+                if intmarks>=75 and intmarks<=100:
+                    grade = "A"
+                else:
+                    grade = "invalid results"
+                    subject = "given subject"
+print("You have",grade, "for",subject,"!")
+'''
+#smart method
+'''
+if intmarks<35 and intmarks>=0:
+    grade = "F"
+elif intmarks<50 and intmarks>=35:
+    grade = "S"
+elif intmarks<65 and intmarks>=50:
+    grade = "C"
+elif intmarks<75 and intmarks>=65:
+    grade = "B"
+elif intmarks<=100 and intmarks>=75:
+    grade = "A"
+else:
+    grade = "invalid results"
+    subject = "given subject"
+print("You have",grade, "for",subject,"!")
+'''
+#smarter method
+'''
+if intmarks<0 or intmarks>100:
+    grade = "invalid"
+    subject = "given subject"
+    
+    #exit() #if first check fails exit from the programme, but not recommended because it exit from entire program, 
+    best solution is to make the next if condition "elif"
+    
+elif intmarks<35:
+    grade = "F"
+elif intmarks<50:
+    grade = "S"
+elif intmarks<65:
+    grade = "C"
+elif intmarks<75:
+    grade = "B"
+elif intmarks<=100:
+    grade = "A"
+print("You have",grade, "for",subject,"!")
+'''
+#first we wrote the code without above 0-100 check, issues of that code is, it responces for minus inputs (-75), it shouldn't be or it should out an error
+#solution - adding another if check 0-100 for the above code
+
+###ternary operator###
+strheight = input("Oya lamayage usa keeyada?")
+intheight = int(strheight)
+msg = "security" if intheight>165 else "kamkaru"
+print(msg)
+#ternary operator >> true  , phraseconditional phrase, false phrase
+newmsg = "me lamayawa " + ("security" if intheight>165 else "kamkaru") + " daanna"
+print(newmsg)
+
+LESSON 3 ====================
+
+#Loops
+
+#1. For Loop
+'''to create a for loop you need to have a data structure'''
+dataStrList = [1, 3, 23, 43, 56, 89]
+
+for Var in dataStrList:
+    print(Var)  # this will print each element in the list
+'''This tells us that Var variable is assigned to each member of the list at a time'''
+'''To double check the assignment of variable Var in List we check below command which will print the 
+index and the value of the list'''
+index=0
+for Var in dataStrList:
+    print(index, Var)   #Var = dataStrList[index]
+    index += 1 #index increment by 1
+'''Second Method, to print both index and value of a list using inside operator'''
+for Var in enumerate(dataStrList):
+    print(type(Var),Var)
+    #any data type you put to the enumerate operator, it will gives a tupple with index and the value pair.
+'''Same Code can be use to assign item and value inside the for loop'''
+for Var in enumerate(dataStrList):
+    indx=Var[0] #in tupple's 0th element gives the index (indx)
+    val=Var[1] #in tupple's 1st element gives the value (val)
+    print(indx,val)
+'''Same can be achived using 2 variables instead of one variable'''
+
+print("\nHave a Break ...!\n\n")
+
+for indx1, val1 in enumerate(dataStrList):
+    print(indx1,val1)
+'''How to loop for given number, ex: up to 10'''
+for itm in range(0, 10, 1): #use range operator to define known range, here range is describe as (start value, upto value, steps)
+    print(itm)
+for itm in range(0,10,2): #since the steps is 2 it will print 0,2,4,6,8
+    print(itm)
+for itm in range(0, len(dataStrList)):
+    print(dataStrList[itm])
+
+#2. While Loop
+
+count = 0
+sum = 0
+'''
+while count<10:
+    print(count)
+    count += 2
+'''
+while count<3322:
+    sum = count + sum
+    count += 1
+print(sum)
+
+# Break infinite while loop
+i=0
+while True: #True is always true, so this will loop infinitely
+    if i>=100: #using if command we break the loop, when if is True, the loop will break
+        break
+    i += 10
+    print(i)
+
+#Break can be use for "for loop"
+print("break to stop the loop")
+i = [23, 42, 81, 19, 32, 67, 12, 25]
+
+'''for j in i:
+    if j>50:
+        break
+    print(j)'''
+
+print("continue to skip a step")
+
+'''for j in i:
+    if j>50:
+        continue #loop step will be skip when the i stack's element is larger than 50
+    print(j)'''
+
+print("Find even number using for loop")
+#so we find odd numbers and skip, print rest
+for k in i:
+    if k%2 != 0:
+        continue
+    print(k)
+print("Find even numbers using while loop")
+index=0
+while True:
+    '''when writing this code, our plan is to get list elements one by one and check whether elemt's modulas by 2 is 
+    not equal to zero, it means they are odd and we skip the step, and print rest elements.
+    to get the list elements we have to call the list index. list[index]=element
+    lets say we have list of 4 elements, and what we do is get the elements by incrementing the index number.
+    but since we have put that into loop when index number pass 3 (because we have 4 elements in list), it means index4, 
+    but in the list l[4] is invalid and "list index out of range" error will come, to stop that we have to break the loop when 
+    index is greater than or equals to the length of list.
+    '''
+    if index >= len(i):
+        break
+    k=i[index]
+    if k%2 != 0:
+        index += 1
+        continue
+    print(k)
+    index+=1
+
+# Calculate the total of i = [23, 42, 81, 19, 32, 67, 12, 25]
+sum=0
+for j in i:
+    sum += j
+print(sum)
+average = sum/len(i)
+print(average)
+
+#Find the max value 
+i = [23, 42, 85, 19, 32, -167, 17, 125, -82, 21]
+max = i[0]
+min = i[0]
+for j in i:
+    if max<j:
+        max = j
+    if min>j:
+        min = j
+print(max, min)
+
+k=0
+sum=0
+while k<len(i):
+    sum += i[k]
+    k+=1
+print("Sum is", sum, "Count is",k , "Index is", len(i)-1)
+print("Average is ", sum/len(i))
+
+max=min=i[0] 
+index=0
+i = [23, 42, 85, 19, 32, 167, 17, -125, 82, 221]
+while index<len(i):
+    if index>len(i)-1:
+        break
+    if max<i[index]:
+        max=i[index]
+    if min>i[index]:
+        min=i[index]
+    index += 1
+    '''if above incremention "k+=1" is not done, k will never pass the len(i), which is 10, and will never exit from the loop.
+    And it will not print anything/ or print infinitely. To stop that you have to press ctrl+C,
+    Then it will show the error "Keyboard Inturrupt", which means the loop runs infinetely, and to make the loop exit
+    you have to incrementing the value k (in this case) or make the exit function True.
+    '''
+print("Max is", max, "Min is", min)
+
+
+#Iterate Other Data Structures
+
+#Dictionary
+family = { 
+    "Cyril":164, 
+    "Ranjani":145,
+    "Heshan":165,
+    "Rihan":170
+    }
+
+for member in family:
+    print(member)  #This will only print the keys of the dictionary
+    height = family[member] #we can get the dictionary value using the dictionary[key]
+    print(member, height) #then we can print both key and value pair
+
+for member in family.items():
+    print(type(member), member) #using dictionary.items() function we can get the dictionary "key":value pair as a tuple.
+
+for name,height in family.items():
+    print(name, height)
+
+for index,tupple in enumerate(family.items()): #prints index and (key,value) tupple, that tupple cannot expanded in the loop.
+    print(index,tupple) #enumerate in dictionary provides the index and a tuple.
+#x=index, y=tupple : enumerate only provides two values, one is index, the other one is data structure element.
+#if we need to expand the tupple, that need to be done seperately
+    name, height = tupple
+    print(index, name, height)
+
+
+#SET
+
+family = { 
+    "Cyril", 
+    "Ranjani",
+    "Heshan",
+    "Rihan"    
+    }
+
+for name in family:
+    print(name)
+for index, name in enumerate(family):
+    print(index, name)
+
+#TUPPLE
+
+MyTupple = ("Heshan", 31, "DVP", "IESL")
+
+for Mydetails in MyTupple:
+    print(Mydetails) 
+for index, Mydetails in enumerate(MyTupple):
+    print(index, Mydetails)
+

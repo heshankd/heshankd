@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @heshankd
+- 👋 Hi, I’m Heshan Deeyagaha
 - 👀 I’m interested in networking, coding, information security
 - 🌱 I’m currently learning python, kotlin
 - 💞️ I’m looking to collaborate on ...
